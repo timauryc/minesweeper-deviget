@@ -1,0 +1,27 @@
+{
+  "name": "minesweeper-deviget",
+  "version": "1.0.0",
+  "description": "This is a minesweeper game made for deviget challenge",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha './test/**/*.spec.js' --exit",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timauryc/minesweeper-deviget.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timauryc/minesweeper-deviget/issues"
+  },
+  "homepage": "https://github.com/timauryc/minesweeper-deviget#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
