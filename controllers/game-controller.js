@@ -68,7 +68,7 @@ function printBoard() {
             cell = rowArray[i];
             if (cell.state === CellStateEnum.CLOSED) {
                 if (cell.flag === CellFlagEnum.NONE) {
-                    rowMatrix.push(' ')
+                    rowMatrix.push('O')
                 } else if (cell.flag === CellFlagEnum.EXCLAMATION) {
                     rowMatrix.push('!');
                 } else if (cell.flag === CellFlagEnum.QUESTION) {

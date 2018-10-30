@@ -27,18 +27,23 @@ $(document).ready(function () {
             minesLeft = 99
 
         renderBoard(data.board)
+        $('.mines-info').text(minesLeft)
+        $('.game-info').text(data.state)
+
     }
 
-    function renderBoard(board){
-        for(let i = 0;i<board.length;i++){
+    function renderBoard(board) {
+        for (let i = 0; i < board.length; i++) {
             let row = board[i]
             let tr = "<tr>"
-            for(let j=0;j<row.length;j++){
-                if(row[j]=='!'){
+            for (let j = 0; j < row.length; j++) {
+                if (row[j] == '!') {
                     minesLeft--
                 }
+                tr = tr + "<td>"+row[j]+"</td>"
             }
-            $('#board').append()
+            tr = tr +"</tr>"
+            $('#board').append(tr)
         }
     }
 
