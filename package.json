@@ -23,6 +23,7 @@
   "dependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",
+    "minesweeper": "^1.0.5",
     "mocha": "^5.2.0"
   }
 }
