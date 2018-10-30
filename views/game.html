@@ -19,29 +19,55 @@
                 Deviget Minesweeper
             </h1>
 
-            <div class="field has-addons">
-                <p class="control">
-                    <span class="select">
-                        <select id="cpf-status">
-                            <option value="FREE">FREE</option>
-                            <option value="BLOCK">BLOCK</option>
-                        </select>
-                    </span>
-                </p>
-                <p class="control">
-                    <input id="cpf-input" class="input" type="tel" placeholder="cpf">
-                </p>
+            <a class="button start">New Game</a>
+            <div class="dropdown is-active">
+                <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                        <span>Dropdown button</span>
+                        <span class="icon is-small">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                    <div class="dropdown-content">
+                        <a href="#" class="dropdown-item">
+                            Dropdown item
+                        </a>
+                        <a class="dropdown-item">
+                            Other dropdown item
+                        </a>
+                        <a href="#" class="dropdown-item is-active">
+                            Active dropdown item
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Other dropdown item
+                        </a>
+                        <hr class="dropdown-divider">
+                        <a href="#" class="dropdown-item">
+                            With a divider
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="field buttons">
-                <p class="control">
-                    <a id="consult-btn" class="button">Consultar</a>
-                    <a id="insert-btn" class="button">Inserir</a>
-                    <a id="delete-btn" class="button">Apagar</a>
-                    <a id="modify-btn" class="button">Modificar</a>
-                </p>
+            <br>
+            <br>
+            <br>
+            <div class="board">
+                <table>
+
+                </table>
             </div>
-            <div>
-                <span id='operations-display'></span>
+            <br>
+            <br>
+            <br>
+            <div class="info">
+                <div class="mines-left">
+                    <h3>Mines Left: <span class="mines-info">2</span></h3>
+                </div>
+                <div class="game-status">
+                    <h3>Game status: <span class="game-info">YEAH</span></h3>
+                </div>
             </div>
         </div>
     </section>
