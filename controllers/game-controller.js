@@ -98,7 +98,6 @@ function printBoard() {
 };
 
 function clickBoard(clickObject) {
-    //{ 'click': 'left', 'x': 0, 'y': 1 }
     let click = clickObject.click
     let x = clickObject.x
     let y = clickObject.y
