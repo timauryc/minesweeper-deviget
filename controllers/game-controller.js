@@ -6,10 +6,10 @@ const Board = minesweeper.Board;
 const Cell = minesweeper.Cell;
 
 BoardStateEnum = {
-    0:"pristine",
-    1:"in_progress",
-    2:"lost",
-    3:"WON"
+    0: "pristine",
+    1: "in_progress",
+    2: "lost",
+    3: "WON"
 };
 
 let board;
@@ -34,7 +34,6 @@ const gameSettings = {
 
 
 function newGame(level) {
-    console.log(level)
     let responseObject = {}
     if (!gameSettings.hasOwnProperty(level)) {
         responseObject = {
@@ -98,6 +97,37 @@ function printBoard() {
     return resultBoard
 };
 
+function clickBoard(clickObject) {
+    //{ 'click': 'left', 'x': 0, 'y': 1 }
+    let click = clickObject.click
+    let x = clickObject.x
+    let y = clickObject.y
+    let responseObject = {}
+    if ((click != 'left' && click != 'right') || x < 0 || x > board.numRows() || y < 0 || y > board.numColums) {
+        responseObject = {
+            status: 400,
+            body: null
+        }
+    } else {
+        if (click == 'left') {
+            board.openCell(x, y)
+        } else {
+            board.cycleCellFlag(x, y)
+        }
+        responseObject = {
+            status: 200,
+            body: {
+                board: printBoard(),
+                numRows: board.numRows(),
+                numColums: board.numCols(),
+                state: BoardStateEnum[board.state()]
+            }
+        }
+    }
+    return responseObject
+}
+
 module.exports = {
-    newGame: newGame
+    newGame: newGame,
+    clickBoard: clickBoard
 }
