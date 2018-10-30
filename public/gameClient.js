@@ -8,6 +8,10 @@ $(document).ready(function () {
         startGame()
     })
 
+    $("#board td").click(function () {
+        console.log('cell click')
+    })
+
     function startGame() {
         level = $('#game-level :selected').val()
         console.log(level)
