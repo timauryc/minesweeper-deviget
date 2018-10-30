@@ -19,36 +19,17 @@
                 Deviget Minesweeper
             </h1>
 
-            <a class="button start">New Game</a>
-            <div class="dropdown is-active">
-                <div class="dropdown-trigger">
-                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                        <span>Dropdown button</span>
-                        <span class="icon is-small">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                    <div class="dropdown-content">
-                        <a href="#" class="dropdown-item">
-                            Dropdown item
-                        </a>
-                        <a class="dropdown-item">
-                            Other dropdown item
-                        </a>
-                        <a href="#" class="dropdown-item is-active">
-                            Active dropdown item
-                        </a>
-                        <a href="#" class="dropdown-item">
-                            Other dropdown item
-                        </a>
-                        <hr class="dropdown-divider">
-                        <a href="#" class="dropdown-item">
-                            With a divider
-                        </a>
-                    </div>
-                </div>
+            <div class="field has-addons">
+                <a class="button start">New Game</a>
+                <p class="control">
+                    <span class="select">
+                        <select id="game-level">
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">intermediate</option>
+                            <option value="expert">expert</option>
+                        </select>
+                    </span>
+                </p>
             </div>
             <br>
             <br>
@@ -63,10 +44,10 @@
             <br>
             <div class="info">
                 <div class="mines-left">
-                    <h3>Mines Left: <span class="mines-info">2</span></h3>
+                    <h3>Mines Left: <span class="mines-info"></span></h3>
                 </div>
                 <div class="game-status">
-                    <h3>Game status: <span class="game-info">YEAH</span></h3>
+                    <h3>Game status: <span class="game-info"></span></h3>
                 </div>
             </div>
         </div>
