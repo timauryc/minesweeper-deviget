@@ -1,11 +1,16 @@
 const minesweeper = require('minesweeper');
 
-const BoardStateEnum = minesweeper.BoardStateEnum;
 const CellStateEnum = minesweeper.CellStateEnum;
 const CellFlagEnum = minesweeper.CellFlagEnum;
 const Board = minesweeper.Board;
 const Cell = minesweeper.Cell;
 
+BoardStateEnum = {
+    0:"pristine",
+    1:"in_progress",
+    2:"lost",
+    3:"WON"
+};
 
 let board;
 
@@ -29,15 +34,27 @@ const gameSettings = {
 
 
 function newGame(level) {
+    console.log(level)
+    let responseObject = {}
     if (!gameSettings.hasOwnProperty(level)) {
-        let responseObject = {
+        responseObject = {
             status: 400,
             body: null
         }
     } else {
-        let mineArray = minesweeper.generateMineArray(gameSettings.level);
+        let mineArray = minesweeper.generateMineArray(gameSettings[level]);
         board = new Board(mineArray);
+        responseObject = {
+            status: 200,
+            body: {
+                board: printBoard(),
+                numRows: board.numRows(),
+                numColums: board.numCols(),
+                state: BoardStateEnum[board.state()]
+            }
+        }
     }
+    return responseObject
 }
 
 
@@ -80,3 +97,7 @@ function printBoard() {
 
     return resultBoard
 };
+
+module.exports = {
+    newGame: newGame
+}

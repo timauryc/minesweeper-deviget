@@ -65,8 +65,8 @@ describe('Server', function () {
                     res.body.board.should.be.a('array')
                     res.body.numRows.should.equal(16)
                     res.body.numColums.should.equal(32)
-                    res.body.board.length.should.equal(res.body.numColums)
-                    res.body.board[0].length.should.equal(res.body.numRows)
+                    res.body.board.length.should.equal(res.body.numRows)
+                    res.body.board[0].length.should.equal(res.body.numColums)
                     res.body.state.should.equal('pristine')
                     done();
                 })
@@ -74,7 +74,7 @@ describe('Server', function () {
             
         it('should allow only allowed difficulties', function (done) {
             chai.request(server)
-                .get('/game/beginner')
+                .get('/game/god')
                 .end(function (err, res) {
                     res.should.have.status(400);
                     res.should.not.be.json;
@@ -83,7 +83,7 @@ describe('Server', function () {
         })
     })
 
-    describe('click on the board (Post /game)', function () {
+    describe.skip('click on the board (Post /game)', function () {
         it('should return the actual game with all the info needed', function (done) {
             chai.request(server)
             chai.request(server)
