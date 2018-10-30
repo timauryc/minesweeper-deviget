@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Deviget</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
+    <script src="/gameClient.js"></script>
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                Deviget Minesweeper
+            </h1>
+
+            <div class="field has-addons">
+                <p class="control">
+                    <span class="select">
+                        <select id="cpf-status">
+                            <option value="FREE">FREE</option>
+                            <option value="BLOCK">BLOCK</option>
+                        </select>
+                    </span>
+                </p>
+                <p class="control">
+                    <input id="cpf-input" class="input" type="tel" placeholder="cpf">
+                </p>
+            </div>
+            <div class="field buttons">
+                <p class="control">
+                    <a id="consult-btn" class="button">Consultar</a>
+                    <a id="insert-btn" class="button">Inserir</a>
+                    <a id="delete-btn" class="button">Apagar</a>
+                    <a id="modify-btn" class="button">Modificar</a>
+                </p>
+            </div>
+            <div>
+                <span id='operations-display'></span>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

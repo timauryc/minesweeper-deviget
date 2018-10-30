@@ -9,9 +9,9 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use(express.static('public'));
 
 //TODO
-/* app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/cpf.html');
-}) */
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/views/game.html');
+})
 
 require('./routes/game')(app);
 
