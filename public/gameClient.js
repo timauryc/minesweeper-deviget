@@ -8,15 +8,15 @@ $(document).ready(function () {
         startGame()
     })
 
-    $("#board td").click(function () {
-        console.log('cell click')
+    $(".cell").bind('click',function(){
+        console.log('click')
     })
 
     function startGame() {
+        $('#board').html('')
         level = $('#game-level :selected').val()
-        console.log(level)
         $.get(`/game/${level}`, function (data, status) {
-            console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+            //console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
             renderGame(data)
         });
     }
@@ -44,9 +44,9 @@ $(document).ready(function () {
                 if (row[j] == '!') {
                     minesLeft--
                 }
-                tr = tr + "<td>"+row[j]+"</td>"
+                tr = tr + "<td class='cell'>" + row[j] + "</td>"
             }
-            tr = tr +"</tr>"
+            tr = tr + "</tr>"
             $('#board').append(tr)
         }
     }
